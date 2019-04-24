@@ -1,4 +1,4 @@
-﻿namespace AJEFD4
+﻿namespace CSCreateProcessAsUserFromService
 {
     partial class Service1
     {

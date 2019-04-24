@@ -12,14 +12,35 @@ namespace AJEFD4
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+
+            
+        //static void Main()
+        //{
+        //    ServiceBase[] ServicesToRun;
+        //    ServicesToRun = new ServiceBase[]
+        //    {
+        //        new MyNewService()
+        //    };
+        //    ServiceBase.Run(ServicesToRun);
+        //}
+
+
         static void Main()
         {
+
+#if DEBUG
+                    MyNewService myService = new MyNewService();
+                    myService.onDebug();
+                    System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite);
+#else
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                        new MyNewService()
             };
             ServiceBase.Run(ServicesToRun);
+#endif
         }
     }
 }

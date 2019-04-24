@@ -1,0 +1,18 @@
+﻿<Window x:Class="AJEDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AJEDesktop"
+        mc:Ignorable="d"
+        Title="AJE FD Desktop Application" Height="450" Width="800">
+    <Grid>
+        <Label HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="337">
+            Make a selection of Image options
+        </Label>
+        <RadioButton x:Name="___rbtn_localImage_" Content="Local Drive Images" HorizontalAlignment="Left" Margin="87,245,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="___rbtn_onlineImages_" Content="S3 Online Images" HorizontalAlignment="Left" Margin="87,292,0,0" VerticalAlignment="Top"/>
+        <Button Content="Brows" HorizontalAlignment="Left" Margin="272,289,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>
