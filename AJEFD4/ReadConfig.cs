@@ -10,7 +10,7 @@ namespace AJEFD4
 
     class ReadConfig
     {
-        readonly string configurationFile = @"config.xml";
+        readonly string configurationFile = AppDomain.CurrentDomain.BaseDirectory + @"config.xml";
         XmlDocument doc;
         String[] objTypeContainer = new string[5];
 

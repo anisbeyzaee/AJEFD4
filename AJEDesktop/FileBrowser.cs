@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -19,6 +13,7 @@ namespace AJEDesktop
         string folderPath;
         ExternalComcs eComcs = new ExternalComcs();
         ExternalCom eCom = new ExternalCom();
+        
         public FileBrowser()
         {
             InitializeComponent();
@@ -29,6 +24,7 @@ namespace AJEDesktop
         {
             listFiles.Clear();
             listView.Items.Clear();
+
             
             using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select your file." })
             {
@@ -55,15 +51,21 @@ namespace AJEDesktop
         {
             
             if (listView.FocusedItem != null)
+
+            {
+                //Logger.log("Image Selected .. ");
                 Process.Start(listFiles[listView.FocusedItem.Index]);
+
+                string fileName = listView.FocusedItem.Name;
+                string folder = folderPath + fileName;
+                Form form = new Form();
+                form.Text = folder + "file name is =" + fileName;
+                form.ShowDialog();
+                //eCom.connect(folder);
+                eComcs.startProcess(folder);
+            }
             
-            string fileName = listView.FocusedItem.Name;
-            string folder = folderPath + fileName;
-            Form form = new Form();
-            form.Text = folder +"\n" + "file name is =" + fileName;
-            form.ShowDialog();
-            eCom.connect(folder);
-            eComcs.startProcess(folder);
+                 
         }
     }
 }

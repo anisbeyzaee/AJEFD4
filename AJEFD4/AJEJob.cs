@@ -23,15 +23,27 @@ namespace AJEFD4
 
             // for saveThePath3()
             filePath3 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"PathInfo3.txt");
-            if (File.Exists(filePath3))
+            try
             {
-                File.Delete(filePath3);
+                if (File.Exists(filePath3))
+                {
+
+                    File.Delete(filePath3);
+
+                }
+
             }
+            catch(Exception e)
+            {
+                Logger.log("AJEJOB Thread Constructor " + e);
+            }
+
+            
 
         }
         public  void AJEJobRun()
         {
-            
+            Logger.log("AJEJOB Thread has started to begin the AJEJobRun");
             // Create image file getter object
             obj = ObjectFactoryPath.Create(list);
             if (obj == null)

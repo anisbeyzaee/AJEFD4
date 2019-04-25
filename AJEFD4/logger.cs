@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace AJEFD4
 {
-    class Logger
+    static class Logger
     {
         
         public  static void log(string logMessage)
@@ -25,7 +22,7 @@ namespace AJEFD4
 
             catch (Exception e)
             {
-                
+                System.Windows.MessageBox.Show("Error Occured opening the LOGFile" + e);
             }
 
         }
@@ -43,7 +40,7 @@ namespace AJEFD4
                 w.WriteLine("-------------------------------");
             } catch (Exception e)
             {
-
+                System.Windows.MessageBox.Show("Error Occured on Adding the LOG to file" + e);
             }
             
 

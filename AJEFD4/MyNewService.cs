@@ -90,7 +90,7 @@ namespace AJEFD4
 
             
             
-            //Logger.log(" Thread has started");
+            Logger.log(" Thread has started");
             try
             {
                 // As creating a child process might be a time consuming operation,
@@ -105,7 +105,7 @@ namespace AJEFD4
             }
             catch (Exception e)
             {
-                Logger.log("Thread one to create path "+e.ToString());
+                Logger.log("Thread one to create path "+e);
             }
             try
             {
