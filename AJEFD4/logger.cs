@@ -27,6 +27,11 @@ namespace AJEFD4
 
         }
 
+        private static void cleanAllLogs()
+        {
+
+        }
+
         private static void writeLog(string logMessage, StreamWriter w)
         {
             

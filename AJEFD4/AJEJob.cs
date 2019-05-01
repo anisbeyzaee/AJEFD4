@@ -22,6 +22,11 @@ namespace AJEFD4
 
 
             // for saveThePath3()
+
+
+
+            // this method is to move to Logger.cleanAllLogs()
+
             filePath3 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"PathInfo3.txt");
             try
             {
