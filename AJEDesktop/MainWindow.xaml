@@ -15,6 +15,7 @@
         <Button Content="Brows" HorizontalAlignment="Left" Margin="272,289,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Image x:Name="ImageView_fire" HorizontalAlignment="Left" Height="212" Margin="401,34,0,0" VerticalAlignment="Top" Width="347" Source="C:\Users\anisb\source\repos\AJEFD4\AJEDesktop\wall.jpg"/>
         <Image x:Name="Imageview_BClogo" HorizontalAlignment="Left" Height="100" Margin="31,34,0,0" VerticalAlignment="Top" Width="338" RenderTransformOrigin="-0.118,-0.034" Source="C:\Users\anisb\source\repos\AJEFD4\AJEDesktop\BC_Logo.jpg"/>
+        <TextBox Name="Address" HorizontalAlignment="Left" Height="23" Margin="31,369,0,0" TextWrapping="Wrap" Text="Address " VerticalAlignment="Top" Width="739"/>
 
     </Grid>
 </Window>
