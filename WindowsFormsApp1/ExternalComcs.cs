@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
@@ -14,23 +9,23 @@ namespace WindowsFormsApp1
         string message;
 
         public ExternalComcs() { }
-        
-        public void startProcess(String path)
+
+        public string startProcess(String path)
         {
-            bridge(path, @"Classifier", @"ReadImage ");
+            return bridge(path, @"Classifier", @"ReadImage ");
             //bridge(message, @"NotificationBox", @"PDisplay");
         }
 
         private string bridge(String path, string folderName, string javaFile)
         {
             ProcessStartInfo s = new ProcessStartInfo();
-                       
+
             //var fileName = Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), @"Classifier");
 
             s.FileName = @"C:\Program Files\Java\jdk-11.0.2\bin\java.exe";
 
-           // s.WorkingDirectory = @"C:\Temp\JClassifier";
-            string fn = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,folderName );
+            // s.WorkingDirectory = @"C:\Temp\JClassifier";
+            string fn = Path.Combine(@"C:\Users\anisb\source\repos\AJEFD4\AJEFD4\bin\Release", folderName);
             s.WorkingDirectory = fn;
             s.Arguments = javaFile + path;
             s.UseShellExecute = false;
@@ -41,7 +36,7 @@ namespace WindowsFormsApp1
 
             process.StartInfo = s;
             process.Start();
-          
+
             while (!process.StandardOutput.EndOfStream)
 
             {
