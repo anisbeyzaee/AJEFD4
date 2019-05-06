@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -11,16 +12,18 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            btn_Classify.Enabled = false;
+            
         }
-        
+        string result;
         Image img;
         string fileName;
         OpenFileDialog ofd = new OpenFileDialog();
         ExternalComcs ec = new ExternalComcs();
+        
 
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLocal_Click(object sender, EventArgs e)
         {
             
             ofd.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
@@ -39,14 +42,21 @@ namespace WindowsFormsApp1
             picBox.Visible = true;
 
             textBox_fileName.Text = "File Name: " + fileName;
-           Classification_Lable.Text ="Classified As: " + ec.startProcess(fileName);
-           //Classification_Lable.Text = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "folderName");
-
+            Classification_Lable.Text = null;
+            btn_Classify.Enabled = true;
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnClassify_Click(object sender, EventArgs e)
+        {
+            result = "Classified As: " + ec.startProcess(fileName);
+            Classification_Lable.Text = result;
+            textBox_log.Text += String.Format(fileName + "Classified as: " + result + "{0}" , Environment.NewLine) ;
 
         }
     }

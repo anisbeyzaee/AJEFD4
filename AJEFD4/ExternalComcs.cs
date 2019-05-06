@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1
+namespace AJEFD4
 {
     class ExternalComcs
     {
