@@ -27,23 +27,26 @@ namespace WindowsFormsApp1
         {
             
             ofd.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-            pictureBox1.Image = null;
+            ImageDisplay_PictureBox.Image = null;
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                pictureBox1.Image = null;
+                ImageDisplay_PictureBox.Image = null;
 
             }
             fileName = ofd.FileName.ToString() ;
             PictureBox picBox = new PictureBox();
-            pictureBox1.ImageLocation = fileName;
+            ImageDisplay_PictureBox.ImageLocation = fileName;
             picBox.BringToFront();
             picBox.Location = new System.Drawing.Point(10, 10);
             picBox.Size = new System.Drawing.Size(500, 500);
             picBox.Visible = true;
 
+
             textBox_fileName.Text = "File Name: " + fileName;
+            textBox_fileName.BringToFront();
             Classification_Lable.Text = null;
             btn_Classify.Enabled = true;
+            BackGround_pictureBox.BackColor = this.BackColor;
 
         }
 
@@ -56,7 +59,10 @@ namespace WindowsFormsApp1
         {
             result = "Classified As: " + ec.startProcess(fileName);
             Classification_Lable.Text = result;
+            Classification_Lable.BringToFront();
             textBox_log.Text += String.Format(fileName + "Classified as: " + result + "{0}" , Environment.NewLine) ;
+
+            BackGround_pictureBox.BackColor = System.Drawing.Color.Red;
 
         }
     }
